@@ -1,0 +1,104 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "User API",
+    "version": "1.0.0",
+    "description": "API para registro, login, consulta de usuários e avaliação.\n\nDependências do projeto:\n- express\n- bcryptjs\n- jsonwebtoken\n- swagger-ui-express\n- mocha (dev)\n- chai (dev)\n- sinon (dev)\n- supertest (dev)"
+  },
+  "paths": {
+    "/register": {
+      "post": {
+        "summary": "Registrar novo usuário",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "username": { "type": "string" },
+                  "password": { "type": "string" }
+                },
+                "required": ["username", "password"]
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": { "description": "Usuário criado" },
+          "409": { "description": "Usuário já existe" },
+          "400": { "description": "Dados obrigatórios ausentes" }
+        }
+      }
+    },
+    "/login": {
+      "post": {
+        "summary": "Login de usuário",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "username": { "type": "string" },
+                  "password": { "type": "string" }
+                },
+                "required": ["username", "password"]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": { "description": "Login bem-sucedido" },
+          "401": { "description": "Credenciais inválidas" },
+          "400": { "description": "Dados obrigatórios ausentes" }
+        }
+      }
+    },
+    "/users": {
+      "get": {
+        "summary": "Consultar usuários cadastrados",
+        "security": [{ "bearerAuth": [] }],
+        "responses": {
+          "200": { "description": "Lista de usuários" },
+          "401": { "description": "Token inválido ou ausente" }
+        }
+      }
+    },
+    "/rate": {
+      "post": {
+        "summary": "Dar nota a outro usuário",
+        "security": [{ "bearerAuth": [] }],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "toUsername": { "type": "string" },
+                  "score": { "type": "number" }
+                },
+                "required": ["toUsername", "score"]
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": { "description": "Nota registrada" },
+          "404": { "description": "Usuário não cadastrado" },
+          "400": { "description": "Dados obrigatórios ausentes" }
+        }
+      }
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "bearerAuth": {
+        "type": "http",
+        "scheme": "bearer"
+      }
+    }
+  }
+}

@@ -53,3 +53,14 @@ Para testar a API com Supertest, importe o `app.js` em seus testes sem executar 
 - O banco de dados é volátil e será perdido ao reiniciar o servidor.
 - O token JWT deve ser enviado no header `Authorization` como `Bearer <token>` para acessar `/users`.
 # trabalho-automacao-api
+
+## Dependências do projeto
+
+- express
+- bcryptjs
+- jsonwebtoken
+- swagger-ui-express
+- mocha (dev)
+- chai (dev)
+- sinon (dev)
+- supertest (dev)

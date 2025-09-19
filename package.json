@@ -1,0 +1,22 @@
+{
+  "name": "trabalho-automacao-api",
+  "version": "1.0.0",
+  "main": "server.js",
+  "scripts": {
+    "test": "npm run test:controller && npm run test:external",
+    "test:controller": "mocha test/controller/**/*.js",
+    "test:external": "mocha test/external/**/*.js"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "express": "^4.18.2",
+    "jsonwebtoken": "^9.0.2",
+    "swagger-ui-express": "^4.6.3"
+  },
+  "devDependencies": {
+    "chai": "^6.0.1",
+    "mocha": "^10.8.2",
+    "sinon": "^21.0.0",
+    "supertest": "^6.3.4"
+  }
+}
