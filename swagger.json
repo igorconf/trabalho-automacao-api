@@ -3,7 +3,7 @@
   "info": {
     "title": "User API",
     "version": "1.0.0",
-    "description": "API para registro, login, consulta de usuários e avaliação.\n\nDependências do projeto:\n- express\n- bcryptjs\n- jsonwebtoken\n- swagger-ui-express\n- mocha (dev)\n- chai (dev)\n- sinon (dev)\n- supertest (dev)"
+  "description": "API para registro, login, consulta de usuários e avaliação.\n\nDependências do projeto:\n- express\n- bcryptjs\n- jsonwebtoken\n- swagger-ui-express\n- mocha (dev)\n- chai (dev)\n- sinon (dev)\n- supertest (dev)\n\nTestes automatizados:\n- Testes de controller: cobrem lógica dos controllers e uso de mocks/sinon.\n- Testes external: simulam uso real da API, sem mocks.\n- Para rodar: npm run test:controller, npm run test:external, npm run test."
   },
   "paths": {
     "/register": {
@@ -77,10 +77,11 @@
               "schema": {
                 "type": "object",
                 "properties": {
+                  "fromUsername": { "type": "string" },
                   "toUsername": { "type": "string" },
                   "score": { "type": "number" }
                 },
-                "required": ["toUsername", "score"]
+                "required": ["fromUsername", "toUsername", "score"]
               }
             }
           }

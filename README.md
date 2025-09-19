@@ -54,13 +54,18 @@ Para testar a API com Supertest, importe o `app.js` em seus testes sem executar 
 - O token JWT deve ser enviado no header `Authorization` como `Bearer <token>` para acessar `/users`.
 # trabalho-automacao-api
 
-## Dependências do projeto
 
-- express
-- bcryptjs
-- jsonwebtoken
-- swagger-ui-express
-- mocha (dev)
-- chai (dev)
-- sinon (dev)
-- supertest (dev)
+## Testes
+
+O projeto possui testes automatizados para todas as rotas principais, divididos em dois níveis:
+
+- **Controller:** Testa o comportamento dos controllers, incluindo uso de mocks com sinon para simular respostas dos serviços.
+- **External:** Testa as rotas de forma integrada, sem mocks, simulando o uso real da API.
+
+Para rodar os testes:
+
+- `npm run test:controller` — executa apenas os testes de controller
+- `npm run test:external` — executa apenas os testes external
+- `npm run test` — executa todos os testes
+
+Os testes cobrem os cenários de sucesso, erro de dados obrigatórios, autenticação e casos de negócio para cada rota (`/register`, `/login`, `/users`, `/rate`).
