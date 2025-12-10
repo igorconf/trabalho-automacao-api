@@ -5,21 +5,21 @@
   "scripts": {
     "test": "npm run test:controller && npm run test:external",
     "test:controller": "mocha test/controller/**/*.js",
-    "test:external": "mocha test/external/**/*.js"
+    "test:external": "mocha test/external/**/*.js",
+    "k6:run": "k6 run test/k6/api.test.js --out json=results.json",
+    "k6:report": "node scripts/k6-report.js results.json report.html"
   },
   "dependencies": {
-    "@apollo/server": "^5.0.0",
     "bcryptjs": "^2.4.3",
     "body-parser": "^2.2.0",
     "cors": "^2.8.5",
     "express": "^4.21.2",
-    "graphql": "^16.11.0",
     "jsonwebtoken": "^9.0.2",
     "swagger-ui-express": "^4.6.3"
   },
   "devDependencies": {
     "chai": "^6.0.1",
-    "mocha": "^10.8.2",
+    "mocha": "^11.7.2",
     "sinon": "^21.0.0",
     "supertest": "^6.3.4"
   }

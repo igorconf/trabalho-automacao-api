@@ -5,3 +5,21 @@ package-lock.json
 Thumbs.db
 .vscode/
 .idea/
+
+# K6 Test Artifacts
+results.json
+report.html
+
+# Documentação Auxiliar (local only)
+K6_GUIDE.md
+K6_QUICK_START.md
+GITHUB_ACTIONS.md
+GITHUB_QUICKSTART.md
+DELIVERY_CHECKLIST.md
+IMPLEMENTATION_SUMMARY.md
+PROJECT_ARCHITECTURE.md
+INDEX.md
+STATUS_FINAL.txt
+ENTREGA_FINAL.txt
+RESUMO_ENTREGA.md
+START_HERE.md
