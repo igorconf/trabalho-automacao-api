@@ -1,6 +1,28 @@
-# API de Usuários com Testes de Performance K6
+# API REST com Estratégia Completa de Testes Automatizados
 
-Projeto de API REST com testes de performance automatizados usando **K6**, implementando os 11 conceitos de testes de carga.
+## 📌 Objetivo
+Este projeto demonstra a implementação de uma API REST com uma estratégia completa de qualidade, cobrindo testes unitários, integração e performance.
+
+O objetivo é garantir não apenas o funcionamento correto da aplicação, mas também sua confiabilidade sob carga, utilizando testes de performance com K6.
+
+## 🧠 Estratégia de Testes
+
+A abordagem adotada cobre diferentes níveis de validação:
+
+- Testes unitários → validação da lógica de negócio
+- Testes de integração → validação dos endpoints
+- Testes de performance → validação sob carga com K6
+- Testes com autenticação → fluxo completo com JWT
+
+## 🚀 Diferenciais
+
+- Testes de carga com K6 simulando cenários reais de uso
+- Validação de SLOs com thresholds (P95 e taxa de sucesso)
+- Pipeline CI/CD com execução automatizada
+- Data-driven testing com múltiplos usuários
+- Reaproveitamento de dados entre requisições (fluxos reais)
+
+---
 
 ## 📋 Funcionalidades
 
@@ -10,6 +32,12 @@ Projeto de API REST com testes de performance automatizados usando **K6**, imple
 - ✅ **Avaliação de usuários**: Endpoint `/rate` protegido
 - ✅ **Banco de dados em memória**: Persistência durante execução
 - ✅ **Documentação Swagger**: `/api-docs`
+
+## 🧪 Tipos de Testes Implementados
+
+- Testes unitários (Mocha + Sinon)
+- Testes de integração (Supertest)
+- Testes de performance (K6)
 
 ## 📁 Estrutura de Diretórios
 
